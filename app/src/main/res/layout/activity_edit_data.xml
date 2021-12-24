@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".EditData"
+    android:background="@drawable/bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.HypeMovie">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backButton"
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+                android:drawableTint="@color/white"
+                android:background="#0000"
+                android:onClick="backButton"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ikon" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:cardBackgroundColor="#9DD1D7"
+                card_view:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layoutpilihan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <RadioGroup
+                            android:id="@+id/pilihan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/film"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="40dp"
+                                android:text="Film"
+                                android:textSize="12dp" />
+
+                            <RadioButton
+                                android:id="@+id/series"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="Series"
+                                android:textSize="12dp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textnama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layoutpilihan"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="25dp"
+                        android:text="Nama Film"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textnama"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="15dp"
+                        android:hint="Masukkan Nama Film"
+                        android:inputType="text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textgenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Genre"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/genre1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textgenre"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginRight="16dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/horror"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:text="Horror"
+
+                            android:textSize="14sp" />
+
+                        <CheckBox
+                            android:id="@+id/comedy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:text="Comedy"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/genre2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/genre1"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginEnd="16dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/romance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="5dp"
+                            android:text="Romance"
+
+                            android:textSize="14sp" />
+
+                        <CheckBox
+                            android:id="@+id/action"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:text="Action"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/genre3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/genre2"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginRight="16dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/fiction"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:text="Fiction"
+
+                            android:textSize="14sp" />
+
+                        <CheckBox
+                            android:id="@+id/mystery"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:text="Mystery"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textsinopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/genre3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Sinopsis"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/sinopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textsinopsis"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="15dp"
+                        android:hint="Masukkan Sinopsis dari Film"
+                        android:inputType="text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/texttanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sinopsis"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Tanggal Rilis"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/tanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/texttanggal"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="15dp"
+                        android:inputType="date"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textpemeran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tanggal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Pemeran"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/pemeran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textpemeran"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="15dp"
+                        android:hint="Masukkan Nama Pemeran"
+                        android:inputType="text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textrating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pemeran"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Rating"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textrating"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/layoutRating"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/ratingvalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="17dp"
+                            android:text="10"
+                            android:textSize="14sp" />
+
+                        <SeekBar
+                            android:id="@+id/seekBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/layoutRating"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/cinema" />
+
+                    <Button
+                        android:id="@+id/upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="#80a9ad"
+                        android:onClick="upload"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="25dp"
+                        android:paddingBottom="10dp"
+                        android:text="Upload Foto"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#80a9ad"
+                android:onClick="submit"
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="10dp"
+                android:text="Submit"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

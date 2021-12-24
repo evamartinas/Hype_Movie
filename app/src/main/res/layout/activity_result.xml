@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Result"
+    android:background="@drawable/bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Theme.HypeMovie">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/backButton"
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+                android:drawableTint="@color/white"
+                android:background="#0000"
+                android:onClick="backButton"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ikon" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                app:cardBackgroundColor="#9DD1D7"
+                card_view:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/kategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:text="Data Film"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/kategori"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/cinema" />
+
+                    <TextView
+                        android:id="@+id/textnama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imageView"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="25dp"
+                        android:text="Nama Film"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textnama"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="Nama Film"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textgenre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Genre"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textgenre"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="Genre"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textsinopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/genre"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Sinopsis"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sinopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textsinopsis"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="Sinopsis"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/texttanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sinopsis"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Tanggal Rilis"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/texttanggal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="21/02/2020"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textpemeran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tanggal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Pemeran"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/pemeran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textpemeran"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="Pemeran"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textrating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pemeran"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Rating"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textrating"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="35dp"
+                        android:text="10"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="20dp"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
